@@ -8,7 +8,7 @@ if (empty($_GET)) {
     $user_age = $_GET['userAge'];
     /* echo $user_name . $user_email . $user_age; */
     /* var_dump([strlen($user_name) > 3, str_contains($user_email, "."), is_numeric(intval($user_age))]); */
-    if (strlen($user_name) > 3 && (str_contains($user_email, "@") && str_contains($user_email, ".")) && is_numeric(intval($user_age))) {
+    if (strlen($user_name) > 3 && (str_contains($user_email, "@") && str_contains($user_email, ".")) && is_numeric($user_age)) {
         $acces_msg = 'Accesso riuscito';
     } else {
         $acces_msg = 'Accesso negato';
