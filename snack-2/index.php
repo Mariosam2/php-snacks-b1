@@ -6,7 +6,9 @@ if (empty($_GET)) {
     $user_name = $_GET['userName'];
     $user_email = $_GET['userEmail'];
     $user_age = $_GET['userAge'];
-    if (strlen($user_name) > 3 && (str_contains('@', $user_email) && str_contains('.', $user_email)) && is_numeric($user_age)) {
+    /* echo $user_name . $user_email . $user_age; */
+    /* var_dump([strlen($user_name) > 3, str_contains($user_email, "."), is_numeric(intval($user_age))]); */
+    if (strlen($user_name) > 3 && (str_contains($user_email, "@") && str_contains($user_email, ".")) && is_numeric(intval($user_age))) {
         $acces_msg = 'Accesso riuscito';
     } else {
         $acces_msg = 'Accesso negato';
@@ -47,8 +49,9 @@ if (empty($_GET)) {
             <button type="reset" class="btn btn-danger">Reset</button>
         </form>
         <?php if (isset($acces_msg)) : ?>
-            <span><?php echo $acces_msg ?></span>
+            <span><?= $acces_msg ?></span>
         <?php endif ?>
+
     </div>
 
 </body>
